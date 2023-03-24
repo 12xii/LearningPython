@@ -125,3 +125,26 @@ np.hstack((a, b))
 # array ([[1, 2, 5, 6]
 #         [3, 4, 7, 8]])
 ```
+
+---
+
+## NumPy에서의 논리 연산
+
+map()을 쓰지 않고서도 할 수 있다 :
+
+ndarray 타입 한정
+
+```
+import numpy as np
+
+a = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])
+
+print(a[a < 5]) # [1 2 3 4]
+
+five_up = (a >= 5)
+print(a[five_up]) # [5 6 7 8]
+
+print(a[(a%2==0) & (a < 6)]) # [2 4]
+
+print(a[(a > 5) | (a % 2 != 0)]) # [7]
+```
